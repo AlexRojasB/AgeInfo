@@ -1,0 +1,6 @@
+framework module Pods_AgeInfo {
+  umbrella header "Pods-AgeInfo-umbrella.h"
+
+  export *
+  module * { export * }
+}
