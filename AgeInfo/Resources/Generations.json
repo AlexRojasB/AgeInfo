@@ -1,0 +1,29 @@
+
+[
+    {
+        "title" : "Silent",
+        "detail": "This is the first defined generational group. It refers to those born between 1926 and 1945, so these are people who lived through World War Two. The name comes from an article in Time magazine from the 1950s, and alludes to the fact that the children of this generation were taught to be seen and not heard. According to Dr Abramson, this group are: disciplined, value-oriented and loyal, interested in direct communication, so enjoy speaking in person as opposed to via technology"
+    },
+    {
+        "title" : "Baby Boomers",
+        "detail": "This is the only generation that’s been defined by an official government body: The US Census Bureau (which is part of the country’s Department for Commerce and is responsible for collecting data from across the US). They’re so named because of the huge surge of births after World War Two. The group starts in 1946 and ends with those born around 1964, when the birthrate began to decline again. Dr Abramson says boomers are: committed, self-sufficient and competitive (she thinks this may have something to do with how many of them there were)"
+    },
+    {
+        "title" : "X",
+        "detail": "The Resolution Foundation thinktank defines Gen X as those born between 1966 and 1980. They grew up in a time when technology was advancing fast, but it wasn’t nearly as readily available as it is today. Because of this, this generation straddles both the digital and non-digital world, and understands the importance of both. Dr Abramson says these people are: resourceful, logical and good problem-solvers"
+    },
+    {
+        "title" : "Y",
+        "detail": "Also known as Millenials, this is the cohort you’ve probably heard the most about. It’s not entirely certain where the generation starts and ends, but it’s approximately those born from 1980 to 1995. They’re often described as ‘lazy’ in the media and that they spend all the money they should be saving for a house on avocado toast, but they’re also the first generation to be “digital natives”, as Dr Abramson describes them. She thinks this makes them extremely self-sufficient, as they no longer have to rely on others to solve their problems or teach them things - they have the internet for that. Other defining characteristics include: confident, curious and questioning authority - Dr Abramson thinks that this can be perceived quite badly by some of the older generations, who would be less likely to do so"
+    },
+    {
+        "title" : "Z",
+        "detail": "There are a few conflicting ideas about where this generation starts. Pew Statistics says 1997, Statistics Canada says 1993, and the Resolution foundation says 2000. Wherever it really begins though, we can safely say this group is young, and has never known a life without tech. That might be why their alternative name (coined by American psychologist Dr Jean Twenge) is iGen. Some of their characteristics include: ambitious, digital-natives and confident"
+    },
+    {
+        "title" : "Alpha",
+        "detail": "blah blah blah"
+    }
+]
+
+

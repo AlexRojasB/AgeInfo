@@ -1,0 +1,26 @@
+[
+    {
+        "id": 0,
+        "name" : "freepik",
+        "website": "https://www.freepik.com/free-vector/watercolor-zodiac-signs_4464179.htm#query=Watercolor%20zodiac&position=2",
+        "descr": "Zodiac signs by"
+    },
+    {
+        "id": 1,
+        "name" : "SVGRepo",
+        "website": "https://www.svgrepo.com/svg/123318/roller-skate",
+        "descr": "Roller skate by"
+    },
+    {
+        "id": 2,
+        "name" : "Wikipedia",
+        "website": "https://commons.wikimedia.org/wiki/File:Fidget_spinner.svg",
+        "descr": "Fidget spinner by"
+    },
+    {
+        "id": 3,
+        "name" : "freesvg",
+        "website": "https://freesvg.org/chinese-horoscope-animals",
+        "descr": "Chinese animals by"
+    }
+]
