@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import UIKit
+
 extension Bundle {
     public var release: String {
         return Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String? ?? "x.x"
@@ -15,5 +17,12 @@ extension Bundle {
     }
     public var version: String {
         return "\(release).\(build)"
+    }
+}
+
+extension UIApplication {
+    var currentScene: UIWindowScene? {
+        connectedScenes
+            .first { $0.activationState == .foregroundActive } as? UIWindowScene
     }
 }

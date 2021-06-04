@@ -13,6 +13,7 @@ import AppCenterAnalytics
 struct DetailView: View {
     @EnvironmentObject var model: CarouselViewModel
     var animation: Namespace.ID
+    let reviewService = ReviewService.shared
    
     var body: some View {
         VStack {
@@ -61,6 +62,10 @@ struct DetailView: View {
                         model.showInfo = false
                     }
                 }
+            }
+        }.onAppear {
+            if model.swipedCard == 2 {
+                reviewService.requestReview()
             }
         }
     }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		919B52055E4F1E83B4483ED9 /* Pods_AgeInfo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F920B66F98318F32774EEA63 /* Pods_AgeInfo.framework */; };
+		A52CDA0126697AD4003777BC /* ReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52CDA0026697AD4003777BC /* ReviewService.swift */; };
 		A5ADFBB4265EFA230096BE99 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ADFBB3265EFA230096BE99 /* AboutView.swift */; };
 		A5ADFBB8265F1E240096BE99 /* AboutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ADFBB7265F1E240096BE99 /* AboutViewModel.swift */; };
 		A5ADFBBB265F27A80096BE99 /* PeopleHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ADFBBA265F27A80096BE99 /* PeopleHelp.swift */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		0F3F8C24E6CFF17E289C00E2 /* Pods-AgeInfo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AgeInfo.release.xcconfig"; path = "Target Support Files/Pods-AgeInfo/Pods-AgeInfo.release.xcconfig"; sourceTree = "<group>"; };
 		5688DA353AB5A38EA31EB361 /* Pods-AgeInfo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AgeInfo.debug.xcconfig"; path = "Target Support Files/Pods-AgeInfo/Pods-AgeInfo.debug.xcconfig"; sourceTree = "<group>"; };
+		A52CDA0026697AD4003777BC /* ReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewService.swift; sourceTree = "<group>"; };
 		A5ADFBB3265EFA230096BE99 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		A5ADFBB7265F1E240096BE99 /* AboutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewModel.swift; sourceTree = "<group>"; };
 		A5ADFBBA265F27A80096BE99 /* PeopleHelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleHelp.swift; sourceTree = "<group>"; };
@@ -101,6 +103,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A52CD9FF26697ABE003777BC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A52CDA0026697AD4003777BC /* ReviewService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		A5E6B23D265C54EE00FFDCA0 = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +132,7 @@
 		A5E6B248265C54EE00FFDCA0 /* AgeInfo */ = {
 			isa = PBXGroup;
 			children = (
+				A52CD9FF26697ABE003777BC /* Services */,
 				A5E6B25E265C558C00FFDCA0 /* ViewModel */,
 				A5E6B25D265C557F00FFDCA0 /* View */,
 				A5E6B25C265C556E00FFDCA0 /* Resources */,
@@ -327,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5E6B26A265C564900FFDCA0 /* LocalInformation.swift in Sources */,
+				A52CDA0126697AD4003777BC /* ReviewService.swift in Sources */,
 				A5E6B24C265C54EE00FFDCA0 /* ContentView.swift in Sources */,
 				A5ADFBB8265F1E240096BE99 /* AboutViewModel.swift in Sources */,
 				A5E6B264265C560A00FFDCA0 /* UIColor.swift in Sources */,
