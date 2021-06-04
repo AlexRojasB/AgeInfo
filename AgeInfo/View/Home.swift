@@ -15,7 +15,7 @@ struct Home: View {
     @EnvironmentObject var model: CarouselViewModel
     @StateObject var aboutModel = AboutViewModel()
     @Namespace var animation
-    @State var date: Date = Date()
+    @State var date: Date = Date(timeIntervalSinceReferenceDate: -123456789.0)
     @State var showDatePicker: Bool = false
     
     var body: some View {
@@ -69,13 +69,11 @@ struct Home: View {
                         
                         if showDatePicker {
                             DatePickerWithButtons(showDatePicker: $showDatePicker, savedDate: $date, selectedDate: date)
-                            
-                            
                         }
                     }
                     .padding(.top, 25)
                     .padding(.horizontal, 30)
-                    if model.swipedCard == model.cards.count && model.cards.count > 0 {
+                    if model.cards.count > 0 {
                         Button(action: resetViews, label: {
                             Image(systemName: "arrow.left")
                                 .font(.system(size: 20, weight: .semibold))
@@ -85,7 +83,7 @@ struct Home: View {
                                 .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
                                 .shadow(radius: 3)
                             
-                        }).padding(.top, 35)
+                        }).padding(.top, 50)
                     }
                     Spacer()
                     

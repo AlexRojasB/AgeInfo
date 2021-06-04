@@ -22,5 +22,17 @@
         "name" : "freesvg",
         "website": "https://freesvg.org/chinese-horoscope-animals",
         "descr": "Chinese animals by"
+    },
+    {
+        "id": 4,
+        "name" : "divad12",
+        "website": "https://rapidapi.com/divad12/api/numbers-1?endpoint=53aa3b65e4b059614033fa2c",
+        "descr": "Numbers API by"
+    },
+    {
+        "id": 5,
+        "name" : "Saptarshi Mazumdar",
+        "website": "https://rapidapi.com/zedjeep/api/devbrewer-horoscope",
+        "descr": "Horoscope API by"
     }
 ]
