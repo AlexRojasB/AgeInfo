@@ -14,6 +14,8 @@ class CarouselViewModel: ObservableObject {
     var date: DateFormatter = DateFormatter()
     var bday = Date()
     @Published var cards: [Card] = []
+    var tempCards: [Card] = []
+    let dispatchGroup = DispatchGroup()
     
     func CalculateAge(date: Date) -> String {
       
@@ -27,6 +29,7 @@ class CarouselViewModel: ObservableObject {
     }
     
     func CreateCards(dateOfBirth: Date) {
+        tempCards.removeAll()
         cards.removeAll()
         swipedCard = 0
         showInfo = false
@@ -40,16 +43,22 @@ class CarouselViewModel: ObservableObject {
         let chineseCard =  Card(cardColor: Color(UIColor.init(hex:"#5E67D8")), title: chineseAnimal.title, subtitle: "In the chinese zodiac:", optionalText: "You are the", detail: chineseAnimal.detail)
         let generationCard = Card(cardColor: Color(UIColor.init(hex: "#F86B6B")), title: generation.title, subtitle: "Your generation is:", optionalText: "Generation", detail: generation.detail)
         let yearCard = Card(cardColor: Color(UIColor.init(hex: "#59B96B")), title: dateOfBirth.year, subtitle: "When you were born:", cardType: .JustText, textSize: 100, textOffset: -30)
-        
-        cards.append(ageCard)
-        cards.append(zodiacCard)
-        cards.append(chineseCard)
-        cards.append(generationCard)
-        cards.append(yearCard)
-        
+        tempCards.append(ageCard)
+        tempCards.append(zodiacCard)
+        tempCards.append(chineseCard)
+        tempCards.append(generationCard)
+        tempCards.append(yearCard)
+       
+        dispatchGroup.enter()
         GetNumberContent(numberValue: CalculateAge(date: dateOfBirth), category: "math", index: 0)
+        dispatchGroup.enter()
         GetZodiacContent(sign: dateOfBirth.zodiacSign.rawValue)
+        dispatchGroup.enter()
         GetNumberContent(numberValue: dateOfBirth.year, category: "year", index: 4)
+        dispatchGroup.notify(queue: .main) {
+            self.cards = self.tempCards
+           }
+        
     }
     
     func GetChineseAnimalIndex(year: Int) -> Int {
@@ -101,7 +110,8 @@ class CarouselViewModel: ObservableObject {
             switch result {
             case .success(let response):
                 DispatchQueue.main.async {
-                    self.cards[1].detail = response.Sign.Daily
+                    self.tempCards[1].detail = response.Sign.Daily
+                    self.dispatchGroup.leave()
                 }
                 
             case .failure(let error):
@@ -118,7 +128,8 @@ class CarouselViewModel: ObservableObject {
             switch result {
             case .success(let response):
                 DispatchQueue.main.async {
-                    self.cards[index].detail = response.text
+                    print("Updating cards from number")
+                    self.tempCards[index].detail = response.text
                     if let someDate = response.date {
                         let dateFormatter = DateFormatter()
                         dateFormatter.dateFormat = "MMMM dd"
@@ -126,10 +137,11 @@ class CarouselViewModel: ObservableObject {
                         {
                             dateFormatter.dateFormat = "dd MMM"
                             let convertedDate =  dateFormatter.string(from: date2)
-                            self.cards[index].optionalText = convertedDate
-                            self.cards[index].underText = convertedDate
+                            self.tempCards[index].optionalText = convertedDate
+                            self.tempCards[index].underText = convertedDate
                         }
                     }
+                    self.dispatchGroup.leave()
                 }
             case .failure(let error):
                 print(error)

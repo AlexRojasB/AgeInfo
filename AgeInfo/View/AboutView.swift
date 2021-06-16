@@ -56,7 +56,7 @@ struct AboutView: View {
                 .shadow(color: .gray, radius: 2, x: 1, y: 1)
                 
                 Link("Privacy Policy", destination: URL(string: "https://sites.google.com/view/ageinfo-privacypolicies/inicio")!)
-                Text("Version \(Bundle.main.version)")
+                Text("Version \(Bundle.main.release)")
             }.padding()
         }
         .navigationTitle("About Age Info")
