@@ -8,7 +8,6 @@
 
 import SwiftUI
 import GoogleMobileAds
-import AppCenterAnalytics
 
 struct DetailView: View {
     @EnvironmentObject var model: CarouselViewModel

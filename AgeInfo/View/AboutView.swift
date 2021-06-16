@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AppCenterAnalytics
 
 struct AboutView: View {
     @EnvironmentObject var model: AboutViewModel
@@ -39,6 +40,9 @@ struct AboutView: View {
                         Link("bug", destination: URL(string: "https://github.com/AlexRojasB/AgeInfo/issues")!)
                     }
                     .padding(.top, 30)
+                    .onAppear {
+                        Analytics.trackEvent("Show About Page")
+                    }
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding()
