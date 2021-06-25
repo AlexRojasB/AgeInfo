@@ -43,6 +43,21 @@ struct AboutView: View {
                     .onAppear {
                         Analytics.trackEvent("Show About Page")
                     }
+                    HStack {
+                        Text("Follow me on: ")
+                        Image("twitter")
+                            .resizable()
+                            .frame(width: 25, height: 25, alignment: .trailing)
+                            .onTapGesture {
+                                model.OpenBrowser(website: "https://twitter.com/alexrrojasb")
+                            }
+                        Image("github")
+                            .resizable()
+                            .frame(width: 35, height: 35, alignment: .trailing)
+                            .onTapGesture {
+                                model.OpenBrowser(website: "https://github.com/AlexRojasB/")
+                            }
+                    }
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding()

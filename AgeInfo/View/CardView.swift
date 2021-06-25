@@ -21,7 +21,7 @@ struct CardView: View {
                 .padding()
                 .padding(.top, 10)
                 .frame(maxWidth: .infinity, alignment: .bottomLeading)
-                .matchedGeometryEffect(id: "Subtitle-\(card.id)", in: animation)
+                .matchedGeometryEffect(id: "subtitle-\(card.id)", in: animation)
             ZStack(alignment: .bottom){
                 Text(String(repeating: "\(card.optionalText) ", count: 12))
                     .font(.system(size: 54))
@@ -37,14 +37,13 @@ struct CardView: View {
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
                     .shadow(color: Color.init(red: 0, green: 0, blue: 0, opacity: 0.40), radius: 8, x: 3, y: 3)
-                    .matchedGeometryEffect(id: "Date-\(card.id)", in: animation)
+                    
                 Text(card.underText)
                     .font(.system(size: 50))
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                     .foregroundColor(.white)
                     .shadow(color: Color.init(red: 0, green: 0, blue: 0, opacity: 0.40), radius: 8, x: 3, y: 3)
                     .offset(CGSize(width: 0.0, height: card.textOffset))
-                    .matchedGeometryEffect(id: "Descr-\(card.id)", in: animation)
             }
             
             HStack {

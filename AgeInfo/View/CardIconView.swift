@@ -19,7 +19,7 @@ struct CardIconView: View {
                 .padding()
                 .padding(.top, 10)
                 .frame(maxWidth: .infinity, alignment: .bottomLeading)
-                .matchedGeometryEffect(id: "Date-\(card.id)", in: animation)
+                .matchedGeometryEffect(id: "subtitle-\(card.id)", in: animation)
             HStack {
                 VStack(alignment: .leading, spacing: 0){
                 Text(card.optionalText)
@@ -27,13 +27,11 @@ struct CardIconView: View {
                     .fontWeight(.bold)
                     .foregroundColor(.white)
                     .shadow(color: Color.init(red: 0, green: 0, blue: 0, opacity: 0.40), radius: 8, x: 3, y: 3)
-                    .matchedGeometryEffect(id: "OptionalText-\(card.id)", in: animation)
                 Text(card.title)
                     .font(.system(size: 50))
                     .fontWeight(.bold)
                     .foregroundColor(.white)
                     .shadow(color: Color.init(red: 0, green: 0, blue: 0, opacity: 0.40), radius: 8, x: 3, y: 3)
-                    .matchedGeometryEffect(id: "Title-\(card.id)", in: animation)
           
          
                 }
