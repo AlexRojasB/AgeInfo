@@ -17,6 +17,7 @@ struct Home: View {
     @Namespace var animation
     @State var date: Date = Date(timeIntervalSinceReferenceDate: -123456789.0)
     @State var showDatePicker: Bool = false
+    @State var isLoading: Bool = false
     
     var body: some View {
         NavigationView {
@@ -25,11 +26,13 @@ struct Home: View {
                     HStack {
                         Text("Select your birthdate:")
                         Button(action: {
-                            showDatePicker.toggle()
+                            if !isLoading {
+                                showDatePicker.toggle()
+                            }
                         }, label: {
                             Text(date, style: .date)
                         }) .onChange(of: date, perform: { value in
-                            print(value)
+                            self.isLoading = true
                             model.CreateCards(dateOfBirth: value)
                         })
                         .padding(.leading, 10)
@@ -37,7 +40,10 @@ struct Home: View {
                     }.padding(.leading, 20)
                     
                     ZStack {
-                        
+                        if isLoading {
+                            LoadingView()
+                        }
+                           
                         if model.cards.count > 0 {
                             ForEach(model.cards.indices.reversed(), id: \.self) {index in
                                 HStack {
@@ -62,6 +68,9 @@ struct Home: View {
                                 .gesture(DragGesture(minimumDistance: 0).onChanged({ value in onChanged(value: value, index: index)}).onEnded({ value in
                                     onEnd(value: value, index: index)
                                 }))
+                                .onAppear {
+                                    self.isLoading = false
+                                }
                             }
                         }
                         
@@ -72,8 +81,8 @@ struct Home: View {
                         }
                     }
                     .padding(.top, 25)
-                    .padding(.horizontal, 30)
-                    if model.cards.count > 0 {
+                    .padding(.horizontal, 24)
+                    if model.cards.count > 0 && model.swipedCard > 0 {
                         Button(action: resetViews, label: {
                             Image(systemName: "arrow.left")
                                 .font(.system(size: 20, weight: .semibold))
@@ -101,9 +110,11 @@ struct Home: View {
     
     func resetViews() {
         for index in model.cards.indices {
-            withAnimation{
-                model.cards[index].offset = 0
-                model.swipedCard = 0
+            if !showDatePicker {
+                withAnimation{
+                    model.cards[index].offset = 0
+                    model.swipedCard = 0
+                }
             }
         }
     }
@@ -117,18 +128,16 @@ struct Home: View {
     }
     
     func onChanged(value: DragGesture.Value, index: Int) {
-        if value.translation.height < 0  {
-            print(value.translation.height)
+        if index < (model.cards.count - 1) && value.translation.height < 0 && !showDatePicker  {
             model.cards[index].offset = value.translation.height
         }
     }
     
     func onEnd(value: DragGesture.Value, index: Int) {
         withAnimation{
-            if -value.translation.height > heigth / 3 {
+            if -value.translation.height > heigth / 3 && index < (model.cards.count - 1) && !showDatePicker  {
                 model.cards[index].offset = -heigth / 2
                 model.swipedCard += 1
-                print(model.cards[index].offset)
             } else if model.cards[index].offset !=  (-heigth / 2)  {
                 model.cards[index].offset = 0
             }
@@ -142,7 +151,7 @@ struct Home: View {
     }
     
     func getCardWidth(index: Int) -> CGFloat {
-        let boxWidth = UIScreen.main.bounds.width - 60 - 60
+        let boxWidth = UIScreen.main.bounds.width - 60
         
         return boxWidth
     }
@@ -155,6 +164,6 @@ struct Home: View {
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .previewDevice("iPhone 12 Pro Max")
+            .previewDevice("iPhone 11 Pro")
     }
 }

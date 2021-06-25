@@ -22,7 +22,7 @@ struct DetailView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding()
                 .padding(.top, 10)
-                .matchedGeometryEffect(id: "Date-\(model.selectedCard.id)", in: animation)
+                .matchedGeometryEffect(id: "subtitle-\(model.selectedCard.id)", in: animation)
             HStack{
                 Text("\(model.selectedCard.subtitle) \(model.selectedCard.title)")
                     .font(.title2)
@@ -30,7 +30,7 @@ struct DetailView: View {
                     .foregroundColor(.white)
                     .frame(width: 250, alignment: .leading)
                     .padding()
-                    .matchedGeometryEffect(id: "Subtitle-\(model.selectedCard.id)", in: animation)
+               
                 Spacer()
             }
             if model.showInfo {
@@ -42,6 +42,25 @@ struct DetailView: View {
                         .padding()
                 })
             }
+            Button(action: {
+                withAnimation(.spring()){
+                    model.showContent = false
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                        withAnimation(.easeIn){
+                            model.showInfo = false
+                        }
+                    }
+                }
+            }, label: {
+                Image(systemName: "arrow.left")
+                    .font(.system(size: 20, weight: .semibold))
+                    .foregroundColor(.blue)
+                    .padding()
+                    .background(Color.white)
+                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                    .shadow(radius: 3)
+                
+            }).padding(.top, 50)
             Spacer()
             GADBannerViewController()
                 .frame(width: kGADAdSizeBanner.size.width, height: kGADAdSizeBanner.size.height)

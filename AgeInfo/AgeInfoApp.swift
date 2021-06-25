@@ -17,7 +17,7 @@ struct AgeInfoApp: App {
     init() {
         GADMobileAds.sharedInstance()
         let keys = AgeInfoKeys()
-        #if !DEBUG
+        #if !DEBUG && !TARGET_OS_SIMULATOR
         AppCenter.start(withAppSecret: keys.appCenterAnalitycs, services: [Analytics.self, Crashes.self])
         #endif
     }
