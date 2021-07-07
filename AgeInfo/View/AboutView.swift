@@ -49,12 +49,14 @@ struct AboutView: View {
                             .resizable()
                             .frame(width: 25, height: 25, alignment: .trailing)
                             .onTapGesture {
+                                Analytics.trackEvent("Open Twitter")
                                 model.OpenBrowser(website: "https://twitter.com/alexrrojasb")
                             }
                         Image("github")
                             .resizable()
                             .frame(width: 35, height: 35, alignment: .trailing)
                             .onTapGesture {
+                                Analytics.trackEvent("Open Github")
                                 model.OpenBrowser(website: "https://github.com/AlexRojasB/")
                             }
                     }
