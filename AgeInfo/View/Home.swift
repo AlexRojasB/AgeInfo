@@ -5,10 +5,10 @@
 //  Created by Alexander Rojas Benavides on 5/24/21.
 //
 
-import SwiftUI
-
+import AppCenterAnalytics
 import SwiftUI
 import GoogleMobileAds
+
 var heigth = UIScreen.main.bounds.height
 
 struct Home: View {
@@ -18,6 +18,7 @@ struct Home: View {
     @State var date: Date = Date(timeIntervalSinceReferenceDate: -123456789.0)
     @State var showDatePicker: Bool = false
     @State var isLoading: Bool = false
+    @State var isSharing = false
     
     var body: some View {
         NavigationView {
@@ -104,7 +105,21 @@ struct Home: View {
                 }
             }
             .navigationTitle("Age Info")
-            .navigationBarItems(trailing: NavigationLink(destination: AboutView().environmentObject(aboutModel), label: { Image(systemName: "info.circle") }))
+            .navigationBarItems(trailing:  HStack {
+                Button(action: {
+                    isSharing.toggle()
+                    let shareText = "Discover the stars with this amazing app"
+                    let url = URL(string: "https://apps.apple.com/app/age-info/id1569664398")
+                    let av = UIActivityViewController(activityItems: ["Age Info",shareText, url!], applicationActivities: nil)
+                    av.setValue("Age Info", forKey: "Subject")
+                    UIApplication.shared.windows.first?.rootViewController?.present(av, animated: true, completion: nil)
+                    Analytics.trackEvent("App Shared")
+                }, label: {
+                    Image(systemName: "square.and.arrow.up")
+                })
+                
+                NavigationLink(destination: AboutView().environmentObject(aboutModel), label: { Image(systemName: "info.circle") })
+            })
         }
     }
     
