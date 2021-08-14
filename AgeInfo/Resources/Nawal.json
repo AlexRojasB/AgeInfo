@@ -1,0 +1,47 @@
+
+
+[
+    {
+        "id" : 1,
+        "name": "B'atz'",
+        "color": "Negro",
+        "day": "Dia propicio para las ceremonias.",
+        "definition": "Mono, hilo, el tejido, familia, unidad, las venas,  principio y fin.",
+        "detail": "Es el Nawal de todas las artes, de los tejidos, de lps artistas y la perpetuacion de las ceremonias. Es un dia propicio para pedir pareja, amarrar o desatar cualquier asunto.\nSon maestros de todas las artes. B'atz' es el tiempo desenrollado, es el principio de la inteligencia, la evolucion y la vida humana. ",
+        "positiveVibes": "Reservado, Aamable, Tiene abundancia economica, Hogareno, Protector de su familia",
+        "negativeVibes": "Ambicioso de casas, terrenos y bienes, Incredulo, Caracter fuerte y duro, Tacano, Molesta, pero no le gusta que lo molesten."
+    },
+    {
+        "id" : 2,
+        "name": "E",
+        "color", "Amarillo",
+        "day": "Dia propicio para cumplir objetivos o solicitar trabajos.",
+        "definition": "Diente, camino, autoridad, destino.",
+        "detail": "Indica el camino del destino, el desarrollo de la vida, es la potencia, fuerza y energia para el inicio de un trabajo o viaje para la relacion humana. Los protegidos por este Nawal son considerados lideres naturales, grandes amigos y respetuosos. ",
+        "positiveVibes": "Propicia el bienestar de otros, Viajero y caminante, Orador y pensador, Generoso, Ensena a los demas",
+        "negativeVibes": "Terco, Sufre internamente, Le cuesta su propio bienestar, Impaciente, Nervioso"
+    },
+    {
+        "id" : 3,
+        "name": "AJ",
+        "color", "Rojo",
+        "day": "Propicio para la proteccion del hogar, los animales y las plantas.",
+        "definition": "Caña, cañaveral, abundancia, la vara, el baston del poder, siembra, animales domesticos.",
+        "detail": "Representa el constante retoño de la existencia y su desarrollo, es el triunfo sobre la maldad. Es el Nawal de la casa y de los niños. El que nace en este dia sera un buen consejero, en su persona hay confianza, su conocimiento lo comparte con todos sin excepcion. Es amable con todos y sabe conquistar.",
+        "positiveVibes": "De caracter dulce, Oradores e investigadores, Protector de la casa y de los niños, Suerte para los trabajos o negocios, Respetuosos y aconsejadores.",
+        "negativeVibes": "Celoso, Destruyen familias, Indecisos, Ordena la vida de los demás, Les gusta el chisme."
+    }
+    ,
+    {
+        "id" : 4,
+        "name": "I'X",
+        "color", "Blanco",
+        "day": "Propicio para agradecer todo el trabajo de las mujeres. Para pedir fortaleza fisica y mental",
+        "definition": "Jaguar, vitalidad, montañas, energia femenina",
+        "detail": "Simboliza nuestra madre tierra, las revelaciones divinas, la naturaleza y los altares mayas. Es el Nawal de las 7 vergüenzas humanas: orgullo, envidia, mentira, crimen, ingratitud, ignorancia por pereza./nPersonas de razonamiento interno que les gusta la naturaleza y la soledad. ",
+        "positiveVibes": "Valerosas y fuertes, Emprendedores, Vigilantes, Dador y cuidador de cosas, No pelea facilmente.",
+        "negativeVibes": "Colerico, Le gusta la carne, Haragan, Le gusta la fama, Lastima profundamente."
+    }
+    
+]
+

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A52CDA0126697AD4003777BC /* ReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52CDA0026697AD4003777BC /* ReviewService.swift */; };
+		A536173D26C74DE200DAE77C /* Nawal.json in Resources */ = {isa = PBXBuildFile; fileRef = A536173C26C74DE200DAE77C /* Nawal.json */; };
 		A5ADFBB4265EFA230096BE99 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ADFBB3265EFA230096BE99 /* AboutView.swift */; };
 		A5ADFBB8265F1E240096BE99 /* AboutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ADFBB7265F1E240096BE99 /* AboutViewModel.swift */; };
 		A5ADFBBB265F27A80096BE99 /* PeopleHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ADFBBA265F27A80096BE99 /* PeopleHelp.swift */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		A137A8D718A246BF1C5429D6 /* Pods-AgeInfo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AgeInfo.release.xcconfig"; path = "Target Support Files/Pods-AgeInfo/Pods-AgeInfo.release.xcconfig"; sourceTree = "<group>"; };
 		A52CDA0026697AD4003777BC /* ReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewService.swift; sourceTree = "<group>"; };
+		A536173C26C74DE200DAE77C /* Nawal.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Nawal.json; sourceTree = "<group>"; };
 		A5ADFBB3265EFA230096BE99 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		A5ADFBB7265F1E240096BE99 /* AboutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewModel.swift; sourceTree = "<group>"; };
 		A5ADFBBA265F27A80096BE99 /* PeopleHelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleHelp.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				A5E6B27B265C573B00FFDCA0 /* ChineseHoroscope.json */,
 				A5E6B27E265C575800FFDCA0 /* Generations.json */,
 				A5ADFBBD265F286F0096BE99 /* PeopleToThanks.json */,
+				A536173C26C74DE200DAE77C /* Nawal.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				A5E6B24E265C54F200FFDCA0 /* Assets.xcassets in Resources */,
 				A5E6B27C265C573B00FFDCA0 /* ChineseHoroscope.json in Resources */,
 				A5E6B27F265C575800FFDCA0 /* Generations.json in Resources */,
+				A536173D26C74DE200DAE77C /* Nawal.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
