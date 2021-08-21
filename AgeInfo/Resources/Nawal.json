@@ -80,7 +80,39 @@
         "definition": "Sufrimiento, discriminación, pena, dolor, el rayo, pedernal, obsidiana",
         "detail": "Tijax bendice a los nacidos en su dia con poder en las manos que facilita el cultivo de la medicina y ayuda en la curaazon de las personas y animales. Tiene facilidad para hablar en publico, son racionales por un lado y por otro intuitivos. Juiciosos y justos aunque drasticos, se ofenden facilmente y pueden terminar una relacion de años en un minuto.",
         "positiveVibes": "Poseen señales en el cuerpo, Negociadores y politicos, Se relacionan con todas las personas",
-        "negativeVibes": "Tajantes y cortantes, sufren chismes, Insensibles al dolor ajeno."
+        "negativeVibes": "Tajantes y cortantes, Sufren chismes, Insensibles al dolor ajeno."
+    },
+    ,
+    {
+        "id" : 9,
+        "name": "Kawoq",
+        "color": "Negro",
+        "day": "Propicio para toda clase de adversidades, tambien es el dia para curar enfermedades",
+        "definition": "Familia, comunidad, guardian, lluvia, relampago",
+        "detail": "Las personas nacidas bajo Kawoq son propensas a problemas y dificultates. No son ambiciosos, aceptan las cosas como vienen, hay rasgos de conformismo en su personalidad. Viven y actuan por su familia, pero deberan aprender a no manipular o imponer su vision a los demas. Su salud es fuerte, no se enferman tan facilmente.",
+        "positiveVibes": "Visionarios, Persiven señales en los jos de los demas, Inventores, Buen conversador",
+        "negativeVibes": "Se meten donde no los llaman, Quieren dominar, Vengativos, Conflictivos"
+    }
+    ,
+    {
+        "id" : 10,
+        "name": "Ajpu",
+        "color": "Amarillo",
+        "day": "Propicio para pedir sabiduria, talento y fortaleza fisica",
+        "definition": "Cerbatanero, majestad, caracol",
+        "detail": "Los nacidos en Ajpu tienen la misión de orientar a la humanidad, dar la luz espiritual real, no su idea de la verdad. El ego es su mayor obstáculo en su camino espiritual. Su salud es completa, de mucha fortaleza física, por eso no tan fácilmente se enferma. Será protegido con una fuerza mayor, pero de desconocerlo será un mal para la socidedad, alguien que divide, que desorienta las ideas.",
+        "positiveVibes": "Vencer toda maldad, Curandero con plantas, Dirigentes de grupos, Bienestar material",
+        "negativeVibes": "Criticones, Vengativos, No comparte su espacio con nadie, Contestones, Arrogantes"
+    } ,
+    {
+        "id" : ,
+        "name": "",
+        "color": "",
+        "day": "Propicio para ",
+        "definition": "",
+        "detail": "",
+        "positiveVibes": "",
+        "negativeVibes": ""
     }
     
 ]
