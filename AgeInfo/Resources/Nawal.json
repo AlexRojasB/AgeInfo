@@ -9,7 +9,7 @@
         "definition": "Mono, hilo, el tejido, familia, unidad, las venas,  principio y fin.",
         "detail": "Es el Nawal de todas las artes, de los tejidos, de lps artistas y la perpetuacion de las ceremonias. Es un dia propicio para pedir pareja, amarrar o desatar cualquier asunto.\nSon maestros de todas las artes. B'atz' es el tiempo desenrollado, es el principio de la inteligencia, la evolucion y la vida humana. ",
         "positiveVibes": "Reservado, Aamable, Tiene abundancia economica, Hogareno, Protector de su familia",
-        "negativeVibes": "Ambicioso de casas, terrenos y bienes, Incredulo, Caracter fuerte y duro, Tacano, Molesta, pero no le gusta que lo molesten."
+        "negativeVibes": "Ambicioso de casas, terrenos y bienes, Incredulo, Caracter fuerte y duro, Tacano, Molesta, pero no le gusta que lo molesten.",
     },
     {
         "id" : 2,
@@ -19,7 +19,7 @@
         "definition": "Diente, camino, autoridad, destino.",
         "detail": "Indica el camino del destino, el desarrollo de la vida, es la potencia, fuerza y energia para el inicio de un trabajo o viaje para la relacion humana. Los protegidos por este Nawal son considerados lideres naturales, grandes amigos y respetuosos. ",
         "positiveVibes": "Propicia el bienestar de otros, Viajero y caminante, Orador y pensador, Generoso, Ensena a los demas",
-        "negativeVibes": "Terco, Sufre internamente, Le cuesta su propio bienestar, Impaciente, Nervioso"
+        "negativeVibes": "Terco, Sufre internamente, Le cuesta su propio bienestar, Impaciente, Nervioso",
     },
     {
         "id" : 3,
@@ -82,7 +82,6 @@
         "positiveVibes": "Poseen señales en el cuerpo, Negociadores y politicos, Se relacionan con todas las personas",
         "negativeVibes": "Tajantes y cortantes, Sufren chismes, Insensibles al dolor ajeno."
     },
-    ,
     {
         "id" : 9,
         "name": "Kawoq",

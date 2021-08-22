@@ -37,13 +37,20 @@ class CarouselViewModel: ObservableObject {
         bday = dateOfBirth
         let index = GetChineseAnimalIndex(year: Int(dateOfBirth.year)!)
         chineseAnimal = GetLocalInformation(index: index, fileName: "ChineseHoroscope")
+        
+        let nahualIndex = GetNahualIndex()
+        let nahual = GetNahual(nahualIndex: nahualIndex - 1, fileName: "Nawal")
         generation = GetLocalInformation(index: dateOfBirth.GenerationIndex, fileName: "Generations")
         let ageCard =  Card(cardColor: Color(UIColor.init(hex:"#2AC0D3")), title: CalculateAge(date: dateOfBirth), subtitle: "Your age is:", optionalText: CalculateAge(date: dateOfBirth), underText: "years" , cardType: .JustText)
         let zodiacCard = Card(cardColor: Color(UIColor.init(hex: "#C42D9C")), title: dateOfBirth.zodiacSign.rawValue.lowercased(), subtitle: "In the greek zodiac:", optionalText: "You are")
         let chineseCard =  Card(cardColor: Color(UIColor.init(hex:"#5E67D8")), title: chineseAnimal.title, subtitle: "In the chinese zodiac:", optionalText: "You are the", detail: chineseAnimal.detail)
         let generationCard = Card(cardColor: Color(UIColor.init(hex: "#F86B6B")), title: generation.title, subtitle: "Your generation is:", optionalText: "Generation", detail: generation.detail)
         let yearCard = Card(cardColor: Color(UIColor.init(hex: "#59B96B")), title: dateOfBirth.year, subtitle: "When you were born:", cardType: .JustText, textSize: 100, textOffset: -30)
+        
+        let nahualCard = Card(cardColor: Color(UIColor.init(hex: "#59B56B")), title: nahual.name, subtitle: "Your nahual is:", optionalText: "The nahual", detail: nahual.detail)
+        
         tempCards.append(ageCard)
+        tempCards.append(nahualCard)
         tempCards.append(zodiacCard)
         tempCards.append(chineseCard)
         tempCards.append(generationCard)
@@ -79,6 +86,16 @@ class CarouselViewModel: ObservableObject {
         return nil
     }
     
+    func ParseNahuals(jsonData: Data) -> [Nahual]? {
+        do {
+            let decodedData = try JSONDecoder().decode([Nahual].self, from: jsonData)
+            return decodedData
+        } catch {
+            print("error: \(error)")
+        }
+        return nil
+    }
+    
     func GetLocalInformation(index: Int, fileName: String) -> LocalInformation {
         let jsonData = readLocalJSONFile(forName: fileName)
         if let data = jsonData {
@@ -87,6 +104,36 @@ class CarouselViewModel: ObservableObject {
             }
         }
         return LocalInformation(title: "", detail: "")
+    }
+    
+    func GetNahualIndex() -> Int {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd"
+        let initialTime = formatter.date(from: "1900/01/01")
+        
+        let calendar = Calendar.current
+
+        // Replace the hour (time) of both dates with 00:00
+        let date1 = calendar.startOfDay(for: initialTime!)
+        let date2 = calendar.startOfDay(for: bday)
+
+        let components = calendar.dateComponents([.day], from: date1, to: date2)
+        var result = components.value(for: .day)! % 20
+        result = result + 8
+        if result > 20 {
+            result = result - 20
+        }
+        return result;
+    }
+    
+    func GetNahual(nahualIndex: Int, fileName: String) -> Nahual {
+        let jsonData = readLocalJSONFile(forName: fileName)
+        if let data = jsonData {
+            if let sampleRecordObj = ParseNahuals(jsonData: data) {
+                return sampleRecordObj[nahualIndex]
+            }
+        }
+        return Nahual(id: 0, name: "", color: "", day: "", definition: "", detail: "", positiveVibes: "", negativeVibes: "")
     }
     
     func readLocalJSONFile(forName name: String) -> Data? {
