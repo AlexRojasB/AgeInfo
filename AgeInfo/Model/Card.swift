@@ -25,4 +25,5 @@ struct Card: Identifiable {
 enum CardType {
     case JustText
     case WithIcon
+    case Nahual
 }

@@ -16,6 +16,7 @@ class CarouselViewModel: ObservableObject {
     @Published var cards: [Card] = []
     var tempCards: [Card] = []
     let dispatchGroup = DispatchGroup()
+    var nahual: Nahual = Nahual(id: 0, name: "", color: "", day: "", definition: "", detail: "", positiveVibes: "", negativeVibes: "")
     
     func CalculateAge(date: Date) -> String {
       
@@ -39,7 +40,7 @@ class CarouselViewModel: ObservableObject {
         chineseAnimal = GetLocalInformation(index: index, fileName: "ChineseHoroscope")
         
         let nahualIndex = GetNahualIndex()
-        let nahual = GetNahual(nahualIndex: nahualIndex - 1, fileName: "Nawal")
+        nahual = GetNahual(nahualIndex: nahualIndex, fileName: "Nawal")
         generation = GetLocalInformation(index: dateOfBirth.GenerationIndex, fileName: "Generations")
         let ageCard =  Card(cardColor: Color(UIColor.init(hex:"#2AC0D3")), title: CalculateAge(date: dateOfBirth), subtitle: "Your age is:", optionalText: CalculateAge(date: dateOfBirth), underText: "years" , cardType: .JustText)
         let zodiacCard = Card(cardColor: Color(UIColor.init(hex: "#C42D9C")), title: dateOfBirth.zodiacSign.rawValue.lowercased(), subtitle: "In the greek zodiac:", optionalText: "You are")
@@ -47,7 +48,7 @@ class CarouselViewModel: ObservableObject {
         let generationCard = Card(cardColor: Color(UIColor.init(hex: "#F86B6B")), title: generation.title, subtitle: "Your generation is:", optionalText: "Generation", detail: generation.detail)
         let yearCard = Card(cardColor: Color(UIColor.init(hex: "#59B96B")), title: dateOfBirth.year, subtitle: "When you were born:", cardType: .JustText, textSize: 100, textOffset: -30)
         
-        let nahualCard = Card(cardColor: Color(UIColor.init(hex: "#59B56B")), title: nahual.name, subtitle: "Your nahual is:", optionalText: "The nahual", detail: nahual.detail)
+        let nahualCard = Card(cardColor: Color(UIColor.init(hex: "#59B56B")), title: nahual.name, subtitle: "Your guardian is:", optionalText: "The nahual", cardType: .Nahual, detail: nahual.detail)
         
         tempCards.append(ageCard)
         tempCards.append(nahualCard)
@@ -61,7 +62,7 @@ class CarouselViewModel: ObservableObject {
         dispatchGroup.enter()
         GetZodiacContent(sign: dateOfBirth.zodiacSign.rawValue)
         dispatchGroup.enter()
-        GetNumberContent(numberValue: dateOfBirth.year, category: "year", index: 4)
+        GetNumberContent(numberValue: dateOfBirth.year, category: "year", index: 5)
         dispatchGroup.notify(queue: .main) {
             self.cards = self.tempCards
            }
@@ -119,8 +120,8 @@ class CarouselViewModel: ObservableObject {
 
         let components = calendar.dateComponents([.day], from: date1, to: date2)
         var result = components.value(for: .day)! % 20
-        result = result + 8
-        if result > 20 {
+        result = result + 7
+        if result >= 20 {
             result = result - 20
         }
         return result;
@@ -157,7 +158,7 @@ class CarouselViewModel: ObservableObject {
             switch result {
             case .success(let response):
                 DispatchQueue.main.async {
-                    self.tempCards[1].detail = response.Sign.Daily
+                    self.tempCards[2].detail = response.Sign.Daily
                     self.dispatchGroup.leave()
                 }
                 

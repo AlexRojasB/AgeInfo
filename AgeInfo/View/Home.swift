@@ -101,7 +101,12 @@ struct Home: View {
                         .frame(width: kGADAdSizeBanner.size.width, height: kGADAdSizeBanner.size.height)
                 }
                 if model.showContent {
-                    DetailView(animation: animation)
+                    if model.selectedCard.cardType == .Nahual {
+                        DetailNahualView(animation: animation)
+                    } else {
+                        DetailView(animation: animation)
+                    }
+                    
                 }
             }
             .navigationTitle("Age Info")
