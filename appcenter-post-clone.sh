@@ -3,7 +3,11 @@
 # Install JSON tool
 echo "Install jq"
 brew install jq 
- 
+
+ # Update bundler
+echo "Installing gems"
+bundle update --bundler
+
 # Install Cocoapods-keys
 echo "Installing gems"
 bundle install 
