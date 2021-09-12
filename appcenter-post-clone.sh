@@ -6,8 +6,7 @@ brew install jq
  
 # Install Cocoapods-keys
 echo "Installing gems"
-echo "gem install cocoapods-keys"
-gem install cocoapods-keys
+bundle install 
 
 echo "Setting secrets"
 cd $APPCENTER_SOURCE_DIRECTORY
