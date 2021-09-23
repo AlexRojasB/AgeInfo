@@ -3,7 +3,8 @@
 | DEV       |
 | :------------- | 
 | build | More Stuff   |
-| [![Build status](https://build.appcenter.ms/v0.1/apps/4a855290-0dbc-457c-9aa8-774775838328/branches/dev/badge)](https://appcenter.ms) |
+| [![Build status](https://build.appcenter.ms/v0.1/apps/f1ccf04b-427b-4438-98bf-02fde9e44359/branches/dev/badge)](https://appcenter.ms) |
+
 
 
 
