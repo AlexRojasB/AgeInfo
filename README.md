@@ -1,3 +1,13 @@
+# CI/CD Status
+
+| DEV       |
+| :------------- | 
+| build | More Stuff   |
+| [![Build status](https://build.appcenter.ms/v0.1/apps/f1ccf04b-427b-4438-98bf-02fde9e44359/branches/dev/badge)](https://appcenter.ms) |
+
+
+
+
 # Age Info EN
 Get your current age, your friends or your partner, you will find a fun math phrase related to the age, a historical event that occurred in the year of your birth, you will also get the zodiac sign and what Chinese animal represents you.
 Discover what the stars of your zodiac sign have for you you every day by consulting the horoscope card after having entered your birthday, you can also learn about some traits of your personality based on your Chinese horoscope animal.
