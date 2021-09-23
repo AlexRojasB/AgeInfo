@@ -1,9 +1,9 @@
 # CI/CD Status
 
-| DEV       |
-| :------------- | 
-| build | More Stuff   |
-| [![Build status](https://build.appcenter.ms/v0.1/apps/f1ccf04b-427b-4438-98bf-02fde9e44359/branches/dev/badge)](https://appcenter.ms) |
+| DEV       | MAIN       |
+| :------------- | :------------- |
+| build | More Stuff   | build | More Stuff   |
+| [![Build status](https://build.appcenter.ms/v0.1/apps/f1ccf04b-427b-4438-98bf-02fde9e44359/branches/dev/badge)](https://appcenter.ms) | [![Build status](https://build.appcenter.ms/v0.1/apps/f1ccf04b-427b-4438-98bf-02fde9e44359/branches/main/badge)](https://appcenter.ms) |
 
 
 
